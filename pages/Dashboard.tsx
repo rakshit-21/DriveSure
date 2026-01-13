@@ -6,6 +6,7 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
+import CreateClaim from "./CreateClaim";
 
 // Placeholder Component for new routes
 const PlaceholderPage = ({ title, icon }: { title: string; icon: string }) => (
@@ -584,7 +585,7 @@ const Dashboard: React.FC = () => {
             </div>
             <div className="flex flex-col">
               <h1 className="text-lg font-bold leading-none tracking-tight text-white">
-                SphereInc
+                Drive Sure
               </h1>
               <p className="text-xs font-medium text-gray-400">User Portal</p>
             </div>
@@ -623,6 +624,34 @@ const Dashboard: React.FC = () => {
 
             {/* Other Menu Items */}
             <div className="flex flex-col gap-2 px-2">
+              <Link
+                to="/dashboard/claims"
+                className={`group flex items-center gap-4 rounded-xl px-4 py-3 transition-all ${
+                  isActive("/dashboard/claims")
+                    ? "bg-white/5"
+                    : "hover:bg-white/5"
+                }`}
+              >
+                <span
+                  className={`material-symbols-outlined text-xl ${
+                    isActive("/dashboard/claims")
+                      ? "text-primary"
+                      : "text-gray-500 group-hover:text-white transition-colors"
+                  }`}
+                >
+                  assignment_add
+                </span>
+                <span
+                  className={`font-medium ${
+                    isActive("/dashboard/claims")
+                      ? "text-white"
+                      : "text-gray-400 group-hover:text-white transition-colors"
+                  }`}
+                >
+                  New Claim
+                </span>
+              </Link>
+
               <Link
                 to="/dashboard/stats"
                 className={`group flex items-center gap-4 rounded-xl px-4 py-3 transition-all ${
@@ -777,6 +806,7 @@ const Dashboard: React.FC = () => {
       <main className="flex-1 flex flex-col h-full overflow-y-auto bg-dashboard-bg">
         <Routes>
           <Route path="/" element={<DashboardHome />} />
+          <Route path="/claims" element={<CreateClaim />} />
           <Route
             path="/stats"
             element={<PlaceholderPage title="Drive Stats" icon="speed" />}

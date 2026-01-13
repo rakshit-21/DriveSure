@@ -17,7 +17,7 @@ const LandingPage: React.FC = () => {
             <div className="flex items-center justify-center size-8 rounded-lg bg-primary/20 text-primary">
               <span className="material-symbols-outlined text-[20px]">shield</span>
             </div>
-            <h2 className="text-white text-xl font-bold tracking-tight">SphereInc</h2>
+            <h2 className="text-white text-xl font-bold tracking-tight">Drive Sure</h2>
           </div>
           <div className="hidden lg:flex items-center gap-8">
             <a className="text-slate-300 hover:text-primary transition-colors text-sm font-medium" href="#">Solutions</a>
