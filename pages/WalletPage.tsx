@@ -15,9 +15,10 @@ import {
   ArrowRight,
   Eye,
 } from "lucide-react";
+import { USER_DATA } from "../lib/constants";
 
 const WalletPage: React.FC = () => {
-  const [balance, setBalance] = useState(4520);
+  const [balance, setBalance] = useState(USER_DATA.walletBalance);
   const [activeTab, setActiveTab] = useState("overview");
 
   const transactions = [
@@ -108,7 +109,7 @@ const WalletPage: React.FC = () => {
                 Balance
               </span>
               <span className="text-3xl font-extrabold text-white">
-                ₹ 4,520
+                ₹ {balance.toLocaleString()}
               </span>
               <span className="text-xs font-bold text-[#11d483] mt-1">
                 +12% MoM
@@ -216,7 +217,7 @@ const WalletPage: React.FC = () => {
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie
-                    data={[{ value: 88 }, { value: 12 }]}
+                    data={[{ value: USER_DATA.drivingScore }, { value: 1000 - USER_DATA.drivingScore }]}
                     cx="50%"
                     cy="85%"
                     startAngle={180}
@@ -235,9 +236,9 @@ const WalletPage: React.FC = () => {
               </ResponsiveContainer>
               <div className="absolute bottom-0 mb-2 flex flex-col items-center pointer-events-none">
                 <span className="text-4xl font-extrabold text-white leading-none">
-                  88
+                  {USER_DATA.drivingScore}
                 </span>
-                <span className="text-sm text-gray-500 font-bold">/100</span>
+                <span className="text-sm text-gray-500 font-bold">/1000</span>
               </div>
             </div>
             <div className="mt-2 bg-[#11d483]/10 text-[#11d483] px-3 py-1 rounded text-xs font-bold">

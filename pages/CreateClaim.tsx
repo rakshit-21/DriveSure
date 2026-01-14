@@ -14,6 +14,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import { USER_DATA } from "../lib/constants";
 
 const ProcessingView = ({ onComplete }: { onComplete: () => void }) => {
   const [progress, setProgress] = useState(0);
@@ -145,7 +146,7 @@ const ProcessingView = ({ onComplete }: { onComplete: () => void }) => {
             <p className="text-[#9db9ad] text-xs uppercase font-medium">
               Policy Type
             </p>
-            <p className="text-white font-bold">Parametric Motor Elite</p>
+            <p className="text-white font-bold">{USER_DATA.policyName}</p>
           </div>
         </div>
 
